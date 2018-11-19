@@ -18,4 +18,12 @@ class TrontzPalindromeTest < Minitest::Test
     assert "Madam, I'm Adam.".palindrome?
   end
 
+  def test_integer_palindrome
+    assert 123454321.palindrome?
+  end
+
+  def test_integer_non_palindrome
+    refute 123456.palindrome?
+  end
+  
 end

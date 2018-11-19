@@ -1,22 +1,28 @@
 require "trontz_palindrome/version"
 
-# module TrontzPalindrome
-#   class Error < StandardError; end
-#   # Your code goes here...
-# end
-
-class String
-  
-  # Returns true for a palindrome, false otherwise 
+module TrontzPalindrome
   def palindrome?
-    processed_content == processed_content.reverse
+    if processed_content.empty? 
+      false
+    else
+      processed_content == processed_content.reverse
+    end
   end
 
   private
 
-    # Returns content for palindrome comparison 
     def processed_content
-      self.scan(/[a-z]/i).join.downcase
+      self.to_s.scan(/[a-z\d]/i).join.downcase
     end
 
+end
+
+
+
+class String
+ include TrontzPalindrome
+end
+
+class Integer
+  include TrontzPalindrome
 end
