@@ -12,11 +12,16 @@ class String
     processed_content == processed_content.reverse
   end
 
+  def letters
+    self.split('').select { |char| char.match(/[a-zA-Z]/) }
+    .join
+  end
+
   private
 
     # Returns content for palindrome comparison 
     def processed_content
-      self.downcase
+      self.letters.downcase
     end
 
 end

@@ -15,9 +15,10 @@ class TrontzPalindromeTest < Minitest::Test
   end
 
   def test_puncuated_palindrome
-    # assert "Madam, I'm Adam.".palindrome?
-    skip
+    assert "Madam, I'm Adam.".palindrome?
   end
 
-
+  def test_letters
+    assert_equal "MadamImAdam", "Madam, I'm Adam.".letters
+  end
 end
